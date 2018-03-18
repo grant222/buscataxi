@@ -1,95 +1,67 @@
-$(document).ready(function () {
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
 
-
-    var directionDisplay;
-    var directionsService = new google.maps.DirectionsService();
-    var map;
-
-    function initialize() {
-        directionsDisplay = new google.maps.DirectionsRenderer({
-            suppressMarkers: true
-        });
-
-        var myOptions = {
-            zoom: 6,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-        }
-
-        map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-        directionsDisplay.setMap(map);
-        calcRoute();
+function initialize() {
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var sao_paulo = new google.maps.LatLng(-23.549865, -46.634021); //set to praça da sé SP marco 0
+    var mapOptions = {
+        zoom: 8,
+        center: sao_paulo
     }
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    directionsDisplay.setMap(map);
+}
 
-    function calcRoute() {
+function calcRoute() {
 
-        var waypts = [];
+    $('html, body').animate({
+        scrollTop: ($('.masthead').first().offset().top)
+    }, 500);
 
-        /*stop = new google.maps.LatLng(-23.540169 - 46.864876)
-waypts.push({
-    location: stop,
-    stopover: true
-});
-stop = new google.maps.LatLng(51.945032, 6.465776)
-waypts.push({
-    location: stop,
-    stopover: true
-});
-stop = new google.maps.LatLng(51.945538, 6.469413)
-waypts.push({
-    location: stop,
-    stopover: true
-});
-stop = new google.maps.LatLng(51.947462, 6.467941)
-waypts.push({
-    location: stop,
-    stopover: true
-});
-stop = new google.maps.LatLng(51.945409, 6.465562)
-waypts.push({
-    location: stop,
-    stopover: true
-});
-stop = new google.maps.LatLng(51.943700, 6.462096)
-waypts.push({
-    location: stop,
-    stopover: true
-});*/
 
-        start = new google.maps.LatLng(-23.540169, -46.864876);
-        end = new google.maps.LatLng(-23.5953251, -46.6853225);
+    var start = document.getElementById('start').value;
+    var end = document.getElementById('end').value;
+    var waypts = [];
+    var checkboxArray = document.getElementById('waypoints');
+    /*for (var i = 0; i < checkboxArray.length; i++) {
+    if (checkboxArray.options[i].selected == true) {
+        waypts.push({
+            location: checkboxArray[i].value,
+            stopover: true
+        });
+    }
+}*/
 
-        createMarker(start);
+    var request = {
+        origin: start,
+        destination: end,
+        waypoints: waypts,
+        optimizeWaypoints: true,
+        travelMode: google.maps.TravelMode.DRIVING
+    };
+    directionsService.route(request, function (response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+            var route = response.routes[0];
+            var summaryPanel = document.getElementById('directions_panel');
+            summaryPanel.innerHTML = '';
+            // For each route, display summary information.
+            for (var i = 0; i < route.legs.length; i++) {
 
-        var request = {
-            origin: start,
-            destination: end,
-            waypoints: waypts,
-            optimizeWaypoints: true,
-            travelMode: google.maps.DirectionsTravelMode.WALKING
-        };
+                console.log(alert(route.legs[i].start_location.lat() + " " + route.legs[i].start_location.lng()));
 
-        directionsService.route(request, function (response, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-                directionsDisplay.setDirections(response);
-                var route = response.routes[0];
+                var routeSegment = i + 1;
+                summaryPanel.innerHTML += '<br><br><b>Sua rota: '
+                '</b><br>';
+                summaryPanel.innerHTML += route.legs[i].start_address + '<br> até ';
+                summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+                summaryPanel.innerHTML += route.legs[i].distance.text + '<br> <b>Aproximadamente:<b> ';
+                summaryPanel.innerHTML += route.legs[i].duration.text + '<br><br>';
+                summaryPanel.innerHTML += '<button id="comparar" type="button" class="btn btn-primary" onclick="calcRoute();">COMPARAR VALORES</button><br><br>';
             }
-        });
-    }
+        }
+    });
+}
 
-    function createMarker(latlng) {
-
-        var marker = new google.maps.Marker({
-            position: latlng,
-            map: map
-        });
-    }
-
-    initialize();
-
-
-
-
-
-
-
-});
+google.maps.event.addDomListener(window, 'load', initialize);

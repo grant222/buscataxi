@@ -66,7 +66,7 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/jquery.easing.compatibility.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWtx0qqvO48N3DNQMRCWe6SmtAhJ9-AoA"></script>
-    <script src="js/directions_map.js"></script>
+
 
 
     <!--// end estáticos do tema -->
@@ -124,14 +124,14 @@
 
                         <!--<small>Informe pra gente para onde quer ir, nós ja sabemos onde você está :)</small>
 <p></p>-->
-                        <h1><i class="fa fa-taxi"></i></h1>
+                        <h1>Busca <i class="fa fa-taxi"></i></h1>
                         <p></p>
 
                         <div class="badges">
                             <!-- Search form -->
                             <h3>ORIGEM</h3>
                             <form class="form-inline md-form form-sm">
-                                <input class="form-control form-control-sm ml-3 " type="text" placeholder="RUA BARRA BONITA, 84 BARUERI" aria-label="" disabled>
+                                <input id="start" class="form-control form-control-sm ml-3 " type="text" placeholder="" aria-label="">
                             </form>
 
                             <hr />
@@ -140,12 +140,12 @@
                             <h3>DESTINO</h3>
                             <!-- Search form -->
                             <form class="form-inline md-form form-sm">
-                                <input class="form-control form-control-sm ml-3" type="text" placeholder="FIAP - Rua Olimpíadas - Vila Olimpia" aria-label="" disabled>
+                                <input id="end" class="form-control form-control-sm ml-3" type="text" placeholder="" aria-label="">
                             </form>
 
 
                             <div class="form-inline md-form form-sm tpn">
-                                <button id="login" type="button" class="btn btn-primary">BUSCAR</button>
+                                <button id="login" type="button" class="btn btn-primary" onclick="calcRoute();">BUSCAR</button>
                             </div>
 
                         </div>
@@ -162,14 +162,17 @@
         <header class="masthead">
 
             <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <h5><b>Saída</b>, Rua Barra Bonita, 84 Barueri </h5>
-                <h5><b>Chegada</b>, FIAP - Rua Olimpíadas - Vila Olimpia</h5>
+
+
+            <div id="directions_panel" class="col-sm-8">
+
+
 
             </div>
             <div class="col-sm-2"></div>
 
             <!--render google maps -->
+
 
             <div id="map-canvas"></div>
 
@@ -179,7 +182,7 @@
 
         <!-- área retorno das apis-->
 
-        <section id="table_result ">
+        <section id="table_result">
 
             <div class="col-sm-2"></div>
 
@@ -229,6 +232,7 @@
         <!-- Custom scripts for this template -->
         <script type="text/javascript " src="cordova.js "></script>
         <script type="text/javascript " src="js/index.js "></script>
+        <script src="js/directions_map.js"></script>
         <script type="text/javascript ">
             app.initialize();
 

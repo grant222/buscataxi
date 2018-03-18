@@ -41,7 +41,11 @@ $(document).ready(function () {
         // Collapse the navbar when page is scrolled
         $(window).scroll(navbarCollapse);
 
-        $(".login-bg, #busca, #map, #table_result").height($(window).height());
+        $(".login-bg, #busca, #map, #table_result , .masthead").height($(window).height());
+
+        $("body").delegate("#comparar", "click", function () {
+            alert("foo");
+        });
 
 
     })(jQuery); // End of use strict
