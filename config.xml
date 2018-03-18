@@ -2,10 +2,10 @@
 <widget id="com.BuscaTaxiApp.br" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>BuscaTaxiApp</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Busca Taxi APP.
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+        Fernando Menezes
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
@@ -20,7 +20,7 @@
     <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.2" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.0" />
     <plugin name="cordova-plugin-file" source="npm" spec="~4.1.1" />
-    <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.7.0" />
+   <!--<plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.7.0" />-->
     <plugin name="cordova-plugin-globalization" source="npm" spec="~1.0.3" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.3.0" />
     <plugin name="cordova-plugin-media" source="npm" spec="~2.2.0" />
