@@ -73,7 +73,8 @@ $(document).ready(function () {
 
             /*window.location.href = "https://m.uber.com/ul/?client_id=itlWaKFlgfyB8PEtYSQG4fSIareEaBoi&action=setPickup&pickup[latitude]=-23.5631708&pickup[longitude]=46.6542377&pickup[nickname]=UberHQ&pickup[formatted_address]=1455%20Market%20St%2C%20San%20Francisco%2C%20CA%2094103&dropoff[latitude]=37.802374&dropoff[longitude]=-122.405818&dropoff[nickname]=Coit%20Tower&dropoff[formatted_address]=1%20Telegraph%20Hill%20Blvd%2C%20San%20Francisco%2C%20CA%2094133&product_id=a1111c8c-c720-46c3-8534-2fcdd730040d&link_text=View%20team%20roster&partner_deeplink=partner%3A%2F%2Fteam%2F9383";*/
 
-            window.location.href = "https://m.uber.com/ul/?action=setPickup&client_id=itlWaKFlgfyB8PEtYSQG4fSIareEaBoi&pickup=my_location&dropoff[formatted_address]=avenida%20paulista%201300";
+            window.location.href = "https://m.uber.com/ul/?action=setPickup&client_id=itlWaKFlgfyB8PEtYSQG4fSIareEaBoi&pickup=my_location&dropoff[formatted_address]=Avenida%20Paulista%2C%201300%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%20Brasil&dropoff[latitude]=-23.563171&dropoff[longitude]=-46.654238
+            ";
         });
 
         $("body").delegate("#calc_val", "click", function () {

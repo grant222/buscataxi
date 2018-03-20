@@ -442,7 +442,10 @@ footer ul li a:hover {
     /*letter-spacing: 2px;*/
     text-transform: uppercase;
     cursor: default;
+
 }
+
+
 
 .btn-xl {
     font-size: 11px;
