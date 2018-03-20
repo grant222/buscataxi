@@ -438,7 +438,8 @@ footer ul li a:hover {
 .btn {
     border-radius: 300px;
     font-family: Lato, Helvetica, Arial, sans-serif;
-    letter-spacing: 2px;
+    font-size: 10px;
+    /*letter-spacing: 2px;*/
     text-transform: uppercase
 }
 

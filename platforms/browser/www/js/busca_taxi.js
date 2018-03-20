@@ -60,26 +60,23 @@ $(document).ready(function () {
                 uberServerToken = "S5sBRjGNDVOq4MQt6KYET5XGcTvUT39AZtMkl37s";
 
             // Create variables to store latitude and longitude
-            var userLatitude, userLongitude, partyLatitude = 40.7283405,
-                partyLongitude = -73.994567;
-
-            // Create variable to store timer
-            var timer;
-
+            var userLatitude, userLongitude, partyLatitude = -23.5631708,
+                partyLongitude = 46.6542377;
 
             // Redirect to Uber API via deep-linking to the mobile web-app
-            var uberURL = "https://m.uber.com/sign-up?";
+            //var uberURL = "https://m.uber.com/ul/";
 
             // Add parameters
-            uberURL += "client_id=" + uberClientId;
-            if (typeof userLatitude != typeof undefined) uberURL += "&" + "pickup_latitude=" + userLatitude;
-            if (typeof userLongitude != typeof undefined) uberURL += "&" + "pickup_longitude=" + userLongitude;
-            uberURL += "&" + "dropoff_latitude=" + partyLatitude;
-            uberURL += "&" + "dropoff_longitude=" + partyLongitude;
-            uberURL += "&" + "dropoff_nickname=" + "Thinkful";
+            //uberURL += "client_id=" + uberClientId;
+            //if (typeof userLatitude != typeof undefined) uberURL += "&" + "pickup_latitude=" + userLatitude;
+            //if (typeof userLongitude != typeof undefined) uberURL += "&" + "pickup_longitude=" + userLongitude;
+            //uberURL += "&" + "dropoff_latitude=" + partyLatitude;
+            //uberURL += "&" + "dropoff_longitude=" + partyLongitude;
+            //uberURL += "&" + "dropoff_nickname=" + "Thinkful";
 
 
-            window.location.href = uberURL;
+            window.location.href = "https://m.uber.com/ul/?client_id=itlWaKFlgfyB8PEtYSQG4fSIareEaBoi&action=setPickup&pickup[latitude]=-23.5631708&pickup[longitude]=46.6542377&pickup[nickname]=UberHQ&pickup[formatted_address]=1455%20Market%20St%2C%20San%20Francisco%2C%20CA%2094103&dropoff[latitude]=37.802374&dropoff[longitude]=-122.405818&dropoff[nickname]=Coit%20Tower&dropoff[formatted_address]=1%20Telegraph%20Hill%20Blvd%2C%20San%20Francisco%2C%20CA%2094133&product_id=a1111c8c-c720-46c3-8534-2fcdd730040d&link_text=View%20team%20roster&partner_deeplink=partner%3A%2F%2Fteam%2F9383
+            ";
         });
 
 
