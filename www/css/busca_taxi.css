@@ -590,3 +590,21 @@ footer ul li a:hover {
 #mainNav .container {
     padding: 10px;
 }
+
+
+.bg_login {
+    background: url(../img/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg_login #mainNav {
+    background-color: transparent;
+}
+
+.bg_login #email,
+.bg_login #password {
+    background-color: #fff !important;
+}

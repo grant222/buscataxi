@@ -44,8 +44,46 @@ $(document).ready(function () {
         $(".login-bg, #busca, #map, #table_result , .masthead").height($(window).height());
 
         $("body").delegate("#comparar", "click", function () {
-            alert("foo");
+            $('html, body').animate({
+                scrollTop: ($('#table_result').first().offset().top)
+            }, 500);
         });
+
+
+
+
+        $("body").delegate("#uber", "click", function () {
+
+            // Uber API Constants
+            // Security note: these are visible to whomever views the source code!
+            var uberClientId = "itlWaKFlgfyB8PEtYSQG4fSIareEaBoi",
+                uberServerToken = "S5sBRjGNDVOq4MQt6KYET5XGcTvUT39AZtMkl37s";
+
+            // Create variables to store latitude and longitude
+            var userLatitude, userLongitude, partyLatitude = 40.7283405,
+                partyLongitude = -73.994567;
+
+            // Create variable to store timer
+            var timer;
+
+
+            // Redirect to Uber API via deep-linking to the mobile web-app
+            var uberURL = "https://m.uber.com/sign-up?";
+
+            // Add parameters
+            uberURL += "client_id=" + uberClientId;
+            if (typeof userLatitude != typeof undefined) uberURL += "&" + "pickup_latitude=" + userLatitude;
+            if (typeof userLongitude != typeof undefined) uberURL += "&" + "pickup_longitude=" + userLongitude;
+            uberURL += "&" + "dropoff_latitude=" + partyLatitude;
+            uberURL += "&" + "dropoff_longitude=" + partyLongitude;
+            uberURL += "&" + "dropoff_nickname=" + "Thinkful";
+
+
+            window.location.href = uberURL;
+        });
+
+
+
 
 
     })(jQuery); // End of use strict
