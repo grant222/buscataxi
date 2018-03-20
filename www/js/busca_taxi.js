@@ -43,11 +43,7 @@ $(document).ready(function () {
 
         $(".login-bg, #busca, #map, #table_result , .masthead").height($(window).height());
 
-        $("body").delegate("#comparar", "click", function () {
-            $('html, body').animate({
-                scrollTop: ($('#table_result').first().offset().top)
-            }, 500);
-        });
+
 
 
 
@@ -79,6 +75,19 @@ $(document).ready(function () {
 
             window.location.href = "https://m.uber.com/ul/?action=setPickup&client_id=itlWaKFlgfyB8PEtYSQG4fSIareEaBoi&pickup=my_location&dropoff[formatted_address]=avenida%20paulista%201300";
         });
+
+        $("body").delegate("#calc_val", "click", function () {
+
+            $('html, body').animate({
+                scrollTop: ($('#table_result').first().offset().top)
+            }, 500);
+
+
+        });
+
+
+
+
 
 
 

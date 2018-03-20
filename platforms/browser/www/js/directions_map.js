@@ -8,7 +8,7 @@ function initialize(lat, long) {
     directionsDisplay = new google.maps.DirectionsRenderer();
     var sao_paulo = new google.maps.LatLng(lat, long); //posicao atual
     var mapOptions = {
-        zoom: 8,
+        zoom: 17,
         center: sao_paulo
     }
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -61,7 +61,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
 function calcRoute() {
 
     $('html, body').animate({
-        scrollTop: ($('.masthead').first().offset().top)
+        scrollTop: ($('header.masthead').first().offset().top)
     }, 500);
 
 
@@ -103,7 +103,7 @@ function calcRoute() {
                 summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
                 summaryPanel.innerHTML += route.legs[i].distance.text + '<br> <b>Aproximadamente:<b> ';
                 summaryPanel.innerHTML += route.legs[i].duration.text + '<br><br>';
-                summaryPanel.innerHTML += '<button id="comparar" type="button" class="btn btn-primary" onclick="calcRoute();">COMPARAR VALORES</button><br><br>';
+                summaryPanel.innerHTML += '<button id="calc_val" type="button" class="btn btn-primary">COMPARAR VALORES</button><br><br>';
             }
         }
     });

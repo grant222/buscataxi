@@ -205,7 +205,7 @@ header.masthead .device-container .screen img {
 
 section.download {
     position: relative;
-    padding: 150px 0
+    padding: 90px 0
 }
 
 section.download h2 {
@@ -441,7 +441,7 @@ footer ul li a:hover {
     font-size: 10px;
     /*letter-spacing: 2px;*/
     text-transform: uppercase;
-    max-width: 100px;
+    cursor: default;
 }
 
 .btn-xl {
@@ -570,7 +570,8 @@ footer ul li a:hover {
 }
 
 .fa-taxi {
-    font-size: 100px;
+    font-size: 30px;
+    margin-bottom: 30px;
 }
 
 .search_ipt {
@@ -603,21 +604,11 @@ footer ul li a:hover {
 background-size: cover;*/
 }
 
-.bg_login #mainNav {
-    background-color: transparent;
-}
-
-.bg_login #email,
-.bg_login #password {
-    background-color: #fff !important;
-}
 
 
-.form-control-sm {
-    padding: .90rem .5rem;
-}
 
-body,
-html {
-    overflow-x: hidden;
+
+.table th {
+
+    padding: .35rem;
 }
