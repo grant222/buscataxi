@@ -61,7 +61,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
 function calcRoute() {
 
     $('html, body').animate({
-        scrollTop: ($('#table_result').first().offset().top)
+        scrollTop: ($('.masthead').first().offset().top)
     }, 500);
 
 
