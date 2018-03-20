@@ -440,7 +440,8 @@ footer ul li a:hover {
     font-family: Lato, Helvetica, Arial, sans-serif;
     font-size: 10px;
     /*letter-spacing: 2px;*/
-    text-transform: uppercase
+    text-transform: uppercase;
+    max-width: 100px;
 }
 
 .btn-xl {
@@ -529,7 +530,7 @@ footer ul li a:hover {
 
 
 .tpn {
-    margin-top: 40px;
+    margin: 40px 16px;
 }
 
 .no-sc {
@@ -581,6 +582,7 @@ footer ul li a:hover {
 .logo_login {
 
     max-width: 150px;
+    padding: 20px;
 }
 
 
@@ -594,11 +596,11 @@ footer ul li a:hover {
 
 
 .bg_login {
-    background: url(../img/bg.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    /*background: url(../img/bg.jpg) no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;*/
 }
 
 .bg_login #mainNav {
@@ -608,4 +610,14 @@ footer ul li a:hover {
 .bg_login #email,
 .bg_login #password {
     background-color: #fff !important;
+}
+
+
+.form-control-sm {
+    padding: .90rem .5rem;
+}
+
+body,
+html {
+    overflow-x: hidden;
 }
